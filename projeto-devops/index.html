@@ -1,0 +1,179 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uma introdução simples a DevOps e CI/CD.">
+  <title>DevOps CI/CD</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111f;
+      --panel: #101f33;
+      --blue: #55b8ff;
+      --text: #eef6ff;
+      --muted: #b6c8dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at top, #12345a, var(--bg) 58%);
+      color: var(--text);
+      font: 16px/1.6 system-ui, sans-serif;
+    }
+
+    main {
+      width: min(960px, 92%);
+      margin: auto;
+      padding: 64px 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 32px 12px 44px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      margin: 12px 0;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgb(16 31 51 / 90%);
+      border: 1px solid #254363;
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .pipeline {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .step {
+      padding: 12px 18px;
+      border: 1px solid #3c6d99;
+      border-radius: 12px;
+      background: #102a45;
+      font-weight: 700;
+    }
+
+    .arrow {
+      color: var(--blue);
+      font-size: 1.4rem;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #123c35;
+      color: #9cf2d1;
+      border: 1px solid #26745e;
+      font-weight: 700;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #54e6ae;
+      box-shadow: 0 0 12px #54e6ae;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 36px;
+      color: #89a4be;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 620px) {
+      main {
+        padding: 28px 0;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Desenvolvimento + Operações</div>
+      <h1>DevOps CI/CD</h1>
+      <p>Entenda como colaboração e automação ajudam a entregar software com mais confiança.</p>
+    </header>
+    <section class="card" aria-labelledby="devops-title">
+      <h2 id="devops-title">O que é DevOps?</h2>
+      <p>DevOps é uma forma de trabalhar que aproxima as equipes de desenvolvimento e operações. Com colaboração e
+        automação, mudanças podem ser entregues com frequência e segurança.</p>
+    </section>
+    <section class="cards" aria-label="CI e CD" style="margin-top:18px">
+      <article class="card">
+        <h2>CI · Integração Contínua</h2>
+        <p>As alterações são integradas ao repositório com frequência. Verificações automáticas, como testes, ajudam a
+          encontrar problemas cedo.</p>
+      </article>
+      <article class="card">
+        <h2>CD · Entrega Contínua</h2>
+        <p>Depois das verificações, a aplicação fica pronta para publicação. Com implantação contínua, a publicação
+          também pode acontecer automaticamente.</p>
+      </article>
+    </section>
+    <section class="card" style="margin-top:18px; text-align:center" aria-labelledby="pipeline-title">
+      <h2 id="pipeline-title">Um pipeline simples</h2>
+      <div class="pipeline" aria-label="Git, Build, Test, Deploy">
+        <span class="step">Git</span><span class="arrow" aria-hidden="true">→</span>
+        <span class="step">Build</span><span class="arrow" aria-hidden="true">→</span>
+        <span class="step">Test</span><span class="arrow" aria-hidden="true">→</span>
+        <span class="step">Deploy</span>
+      </div>
+      <span class="status"><span class="dot" aria-hidden="true"></span>Pipeline funcionando</span>
+    </section>
+    <footer>Feito com HTML, CSS, GitHub Actions e GitHub Pages.</footer>
+  </main>
+</body>
+
+</html>
